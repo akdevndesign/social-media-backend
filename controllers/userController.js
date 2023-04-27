@@ -66,7 +66,7 @@ async deleteUser(req, res) {
   // POST to add a new friend to a user's friend list
 async addNewFriend (req, res) {
     try {
-      const user = await User.findByIdAndUpdate(req.params.userId, { $addToSet: { friends: req.params.friendId } }, { new: true });
+      const user = await User.findByIdAndUpdate(req.params.id, { $addToSet: { friends: req.params.id } }, { new: true });
       if (!user) {
         return res.status(404).json({ message: 'No user found with this id!' });
       }
@@ -79,7 +79,7 @@ async addNewFriend (req, res) {
   // DELETE to remove a friend from a user's friend list
 async deleteFriend(req, res) {
     try {
-      const user = await User.findByIdAndUpdate(req.params.userId, { $pull: { friends: req.params.friendId } }, { new: true });
+      const user = await User.findByIdAndUpdate(req.params.id, { $pull: { friends: req.params.id } }, { new: true });
       if (!user) {
         return res.status(404).json({ message: 'No user found with this id!' });
       }

@@ -6,7 +6,7 @@ const { User, Thought } = require('../models');
 module.exports = {
 async getThoughts(req, res) {
   try {
-    const thoughts = await Thought.find().populate('reactions');
+    const thoughts = await Thought.find();
     res.json(thoughts);
   } catch (err) {
     console.error(err);
@@ -83,7 +83,7 @@ async deleteThought(req, res) {
 async postReaction(req, res) {
   try {
     const thought = await Thought.findByIdAndUpdate(
-      req.params.thoughtId,
+      req.params.id,
       { $push: { reactions: req.body } },
       { new: true }
     );
@@ -101,7 +101,7 @@ async postReaction(req, res) {
 async deleteReaction(req, res) {
   try {
     const thought = await Thought.findByIdAndUpdate(
-      req.params.thoughtId,
+      req.params.id,
       { $pull: { reactions: { reactionId: req.params.reactionId } } },
       { new: true }
     );
