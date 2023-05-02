@@ -15,7 +15,7 @@ Install packages using "npm install" and run using "npm run dev"You can test rou
 ## Use
 For demonstration purposes only.
 ## Visual
-![social-media-backend_AdobeExpress](https://user-images.githubusercontent.com/115499632/235761853-aa0832f6-5791-466c-ad7b-d7c3ec4b7104.gif)
+![social-media-backend_AdobeExpress (1)](https://user-images.githubusercontent.com/115499632/235762508-93bd95a6-8f50-48e1-8202-2484804dae45.gif)
 ## Contributing
 None.
 ## License
@@ -24,4 +24,3 @@ Visit https://opensource.org/licenses/MIT for more information.
 ## Questions
 For any questions, please contact me at either of the following:
 * akdevndesign
-
