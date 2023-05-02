@@ -88,7 +88,7 @@ async postReaction(req, res) {
       { new: true }
     );
     if (!thought) {
-      res.status(404).json({ message: 'Thought not found' });
+      res.status(404).json({ message: 'Thought ID not found' });
       return;
     }
     res.json(thought);
@@ -106,13 +106,13 @@ async deleteReaction(req, res) {
       { new: true }
     );
     if (!thought) {
-      res.status(404).json({ message:'Thought not found' });
+      res.status(404).json({ message:'Thought ID not found' });
       return;
-      }
-      res.json(thought);
-      } catch (err) {
-      console.error(err);
-      res.status(500).json(err);
-      }
-      },
+    }
+    res.json(thought);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+},
 }
